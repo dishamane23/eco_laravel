@@ -89,7 +89,7 @@
                                             </a>
                                         </li>
                                         <li class="sub-menu-item">
-                                            <a href="brands.html" class="">
+                                            <a href="{{route('admin.brands')}}" class="">
                                                 <div class="text">Brands</div>
                                             </a>
                                         </li>
@@ -160,10 +160,13 @@
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="settings.html" class="">
+                                    <form method="POST" action="{{route('logout')}}" id="logout-form">
+                                        @csrf
+                                    <a href="{{route('logout')}}" class="" onClick="event.preventDefault();document.getElementById('logout-form').submit();">
                                         <div class="icon"><i class="icon-settings"></i></div>
                                         <div class="text">Logout</div>
                                     </a>
+                                    </form>
                                 </li>
                             </ul>
                         </div>
